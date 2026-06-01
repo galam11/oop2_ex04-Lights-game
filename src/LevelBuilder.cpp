@@ -3,13 +3,9 @@
 
 LevelBuilder::LevelBuilder(int middleRowCount)
 	: m_middleRowCount(middleRowCount)
-{
+{ }
 
-	std::vector<sf::Vector2i> all_coords;
-	std::map<sf::Vector2i, std::array<bool, 6>> temp_arms;
-}
-
-void LevelBuilder::generateLevel(std::map<sf::Vector2i, LightNode>& nodes)
+void LevelBuilder::generateLevel(NodeMap& nodes)
 {
 	generateGrid();
 	buildSpanningTree();
@@ -33,7 +29,7 @@ void LevelBuilder::generateGrid()
 
 void LevelBuilder::buildSpanningTree()
 {
-	std::map<sf::Vector2i, bool> visited;
+	std::unordered_map<sf::Vector2i, bool,VectorHash> visited;
 	for (const auto& coord : m_NodesPos)
 	{
 		m_Arms[coord] = { false, false, false, false, false, false };
@@ -77,7 +73,7 @@ void LevelBuilder::buildSpanningTree()
 	}
 }
 
-void LevelBuilder::createAndScrambleNodes(std::map<sf::Vector2i, LightNode>& nodes)
+void LevelBuilder::createAndScrambleNodes(NodeMap& nodes)
 {
 	for (const auto& coord : m_NodesPos)
 	{

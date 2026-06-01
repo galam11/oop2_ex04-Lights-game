@@ -1,18 +1,10 @@
 #pragma once
-#include <map>
+
 
 #include <SFML/Graphics.hpp>
 #include "LightNode.h"
+#include "NodeMap.h"
 
-namespace std {
-	template <>
-	struct less<sf::Vector2i> {
-		bool operator()(const sf::Vector2i& lhs, const sf::Vector2i& rhs) const {
-			if (lhs.x != rhs.x) return lhs.x < rhs.x;
-			return lhs.y < rhs.y;
-		}
-	};
-}
 
 class Board
 {
@@ -23,8 +15,7 @@ public:
 	bool isSolved() const;
 
 private:
-	std::map<sf::Vector2i, LightNode> m_nodes;
+	NodeMap m_nodes;
 	
-
 	void updateLighting();
 };

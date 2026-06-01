@@ -3,9 +3,10 @@
 
 Controller::Controller() : 
 	m_window(sf::VideoMode({WINDOW_WIDTH, WINDOW_HEIGHT}), "SFML Window"),
-	m_board(5)
+	m_board(9)
 {
 	std::srand(std::time(nullptr));
+	m_window.setFramerateLimit(60);
 }
 
 void Controller::run()

@@ -4,19 +4,20 @@
 #include <SFML/Graphics.hpp>
 #include "LightNode.h"
 #include "Board.h"
+#include "NodeMap.h"
 
 class LevelBuilder
 {
 public:
 	LevelBuilder(int middleRowCount);
-	void generateLevel(std::map<sf::Vector2i, LightNode>& nodes);
+	void generateLevel(NodeMap& nodes);
 
 private:
 	int m_middleRowCount;
 	std::vector<sf::Vector2i> m_NodesPos;
-	std::map<sf::Vector2i, std::array<bool, 6>> m_Arms;
+	std::unordered_map<sf::Vector2i, std::array<bool, 6>, VectorHash> m_Arms;
 
 	void generateGrid();
 	void buildSpanningTree();
-	void createAndScrambleNodes(std::map<sf::Vector2i, LightNode>& nodes);
+	void createAndScrambleNodes(NodeMap& nodes);
 };

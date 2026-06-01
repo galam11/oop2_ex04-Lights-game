@@ -4,7 +4,8 @@
 class LightNodeShape
 {
 public:
-	LightNodeShape(sf::Vector2i pos, sf::Vector2f worldPos, std::array<bool, 6> arms);
+	LightNodeShape() = default;
+	LightNodeShape(sf::Vector2i pos, std::array<bool, 6> arms);
 
 	void draw(sf::RenderWindow& window) const;
 
@@ -13,8 +14,12 @@ public:
 	void rotateRight();
 	void rotateLeft();
 
+	sf::Vector2f getPosition() const;
+
 private:
 	sf::VertexArray m_lines;
 	sf::Transform m_transfrom;
 	sf::CircleShape m_center;
+
+	sf::Vector2f nodeSpaceToWorldSpace(const sf::Vector2i& position) const;
 };

@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "LevelBuilder.h"
+
 Board::Board(int middleRowCount)
 {
 
@@ -63,7 +64,6 @@ void Board::updateLighting()
 			if (neighborIt == m_nodes.end())
 				continue;
 
-			
 			LightNode& neighborNode = neighborIt->second;
 				
 			if (!neighborNode.isLit() && currNode.connectedTo(neighborNode))

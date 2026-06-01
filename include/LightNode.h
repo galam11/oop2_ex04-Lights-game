@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <array>
 #include "Consts.h"
+#include "LightNodeShape.h"
 
 class LightNode 
 {
@@ -20,13 +21,16 @@ public:
 
 	bool connectedTo(const LightNode& other) const;
 
+	
 private:
 	bool m_lit = false;
 	std::array<bool, 6> m_arms = {false};
-	std::array<sf::RectangleShape, 6> m_armsShapes;
+	//std::array<sf::RectangleShape, 6> m_armsShapes;
 	std::array<sf::Vector2i, 6> m_neighbors;
 
-	sf::CircleShape m_circle;
+	LightNodeShape m_shape;
+
+	//sf::CircleShape m_circle;
 	sf::Vector2i m_pos;
-	sf::Vector2f nodeSpaceToWorldSpace(const sf::Vector2i& position) const;
+	
 };
