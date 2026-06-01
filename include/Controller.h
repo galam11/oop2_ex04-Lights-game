@@ -9,7 +9,10 @@ public:
 	void run();
 
 private:
+	void handleEvent(const auto&);
+	void handleEvent(const sf::Event::Closed&);
+	void handleEvent(const sf::Event::MouseButtonPressed& mouseButtonPressedEvent);
+
 	sf::RenderWindow m_window;
 	Board m_board;
-	int m_middleRowCount = 5;
 };

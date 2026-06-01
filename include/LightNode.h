@@ -3,25 +3,24 @@
 #include <array>
 #include "Consts.h"
 
-class HexNode 
+class LightNode 
 {
 public:
-	HexNode() = default;
-	HexNode(sf::Vector2i pos, std::array<bool, 6> arms, bool center = false);
+	LightNode() = default;
+	LightNode(sf::Vector2i pos, std::array<bool, 6> arms);
 	void draw(sf::RenderWindow& window) const;
 	void setLit(bool lit);
 	bool isLit() const;
 
 	void rotateRight();
 	void rotateLeft();
-	bool clickedOnNode(const sf::Vector2f& mousePos) const;
+	bool mouseOverNode(const sf::Vector2f& mousePos) const;
 
 	const std::array<sf::Vector2i, 6>& getNeighbors() const;
 
-	bool connectedTo(const HexNode& other) const;
+	bool connectedTo(const LightNode& other) const;
 
 private:
-	bool m_center = false;
 	bool m_lit = false;
 	std::array<bool, 6> m_arms = {false};
 	std::array<sf::RectangleShape, 6> m_armsShapes;
@@ -29,5 +28,5 @@ private:
 
 	sf::CircleShape m_circle;
 	sf::Vector2i m_pos;
-	sf::Vector2f node2World(const sf::Vector2i& position) const;
+	sf::Vector2f nodeSpaceToWorldSpace(const sf::Vector2i& position) const;
 };
