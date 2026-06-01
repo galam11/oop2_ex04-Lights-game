@@ -15,16 +15,19 @@ void LevelBuilder::generateLevel(NodeMap& nodes)
 void LevelBuilder::generateGrid()
 {
 	int radius = (m_middleRowCount - 1) / 2;
-	for (int q = -radius; q <= radius; ++q)
-	{
-		for (int r = -radius; r <= radius; ++r)
+
+	for (int j = 0; j < m_middleRowCount; ++j)
+		m_NodesPos.push_back(sf::Vector2i(j - radius, 0));
+	
+
+	for (int i = m_middleRowCount - 1, level = 1; i >= 3; --i, level++)
+		for (int j = 0; j < i; ++j)
 		{
-			if (std::abs(q + r) <= radius)
-			{
-				m_NodesPos.push_back(sf::Vector2i(q, r));
-			}
+			auto pos = sf::Vector2i(j - radius, level);
+			m_NodesPos.push_back(pos);
+			m_NodesPos.push_back(-pos);
 		}
-	}
+	
 }
 
 void LevelBuilder::buildSpanningTree()

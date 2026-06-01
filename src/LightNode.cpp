@@ -1,6 +1,5 @@
 #include "LightNode.h"
 
-
 LightNode::LightNode(sf::Vector2i pos, std::array<bool, 6> arms)
 	: m_pos(pos), m_arms(arms), m_shape(pos, arms)
 {
