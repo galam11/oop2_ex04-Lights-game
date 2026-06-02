@@ -78,7 +78,7 @@ void Board::updateLighting()
 
 bool Board::isSolved() const
 {
-	return std::all_of(m_nodes.begin(), m_nodes.end(), 
+	return m_nodes.empty() || std::all_of(m_nodes.begin(), m_nodes.end(),
 		[](const auto& pair) { return pair.second.isLit(); }
-);
+	);
 }

@@ -9,6 +9,7 @@
 class Board
 {
 public:
+	Board() = default;
 	Board(int middleRowCount);
 	void draw(sf::RenderWindow& window) const;
 	void handleClick(const sf::Vector2f& position,bool clockWise);

@@ -1,6 +1,7 @@
 #pragma once
 #include <array>
 #include <SFML/Graphics.hpp>
+#include <string>
 
 const float HEX_SIZE = 50.0f;
 const float HEX_CLICABLE_SIZE = HEX_SIZE * 0.75f;
@@ -21,3 +22,10 @@ const std::array<const sf::Vector2i, 6> NIGBORS_DIR = {
 
 const sf::Color ON_COLOR = sf::Color(255, 255, 0);
 const sf::Color OFF_COLOR = sf::Color(100, 100, 0);
+
+const std::string FONT_PATH = "Jersey10-Regular.ttf";
+const std::string PLAY_LIST_PATH = "playlist.txt";
+
+const std::string WIN_TEXT = "You win!";
+const std::string NEXT_LEVEL_TEXT = "Next level: ";
+const std::string PRESS_TO_CONTINUE_TEXT = "Press any key to continue...";
