@@ -25,12 +25,10 @@ public:
 private:
 	bool m_lit = false;
 	std::array<bool, 6> m_arms = {false};
-	//std::array<sf::RectangleShape, 6> m_armsShapes;
 	std::array<sf::Vector2i, 6> m_neighbors;
 
 	LightNodeShape m_shape;
 
-	//sf::CircleShape m_circle;
 	sf::Vector2i m_pos;
 	
 };
