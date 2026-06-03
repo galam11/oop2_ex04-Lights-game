@@ -29,7 +29,7 @@ void Controller::run()
 			m_gameOver = m_midRowQueue.empty();
 		}
 
-		m_window.clear(sf::Color::White);
+		m_window.clear(BACKROUND_COLOR);
 
 		m_board.draw(m_window);
 

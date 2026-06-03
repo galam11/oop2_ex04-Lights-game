@@ -10,7 +10,7 @@ LightNodeShape::LightNodeShape(sf::Vector2i pos, std::array<bool, 6> arms)
 	m_center.setPosition(worldPos);
 	m_center.setFillColor(OFF_COLOR);
 	m_center.setOutlineColor(sf::Color::Black);
-	m_center.setOutlineThickness(2);
+	m_center.setOutlineThickness(3);
 
 	m_transfrom.translate(worldPos);
 	
