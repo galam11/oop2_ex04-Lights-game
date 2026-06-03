@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-const float HEX_SIZE = 50.0f;
+const float HEX_SIZE = 45.0f;
 const float HEX_CLICABLE_SIZE = HEX_SIZE * 0.75f;
 const float RADIUS_SIZE = 17.0f;
 const float ROTATION_ANGLE = 60.0f;

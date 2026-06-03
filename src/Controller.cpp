@@ -1,6 +1,5 @@
 #include "Controller.h"
 #include "Consts.h"
-
 #include <fstream>
 #include <iostream>
 
@@ -69,7 +68,6 @@ void Controller::loadMidRowPlayList()
 		{
 			if (!iss.eof())
 				throw std::runtime_error("Invalid data found in playlist: expected integers.");
-
 		}
 	}
 }
