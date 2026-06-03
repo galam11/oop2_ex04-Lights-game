@@ -26,6 +26,7 @@ const sf::Color BACKROUND_COLOR = sf::Color(225, 225, 225);
 
 const std::string FONT_PATH = "Jersey10-Regular.ttf";
 const std::string PLAY_LIST_PATH = "playlist.txt";
+const std::string ERR_FILE_PATH = "log.txt";
 
 const std::string WIN_TEXT = "You win!";
 const std::string NEXT_LEVEL_TEXT = "Level complete!";

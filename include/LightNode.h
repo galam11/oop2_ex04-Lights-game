@@ -21,7 +21,6 @@ public:
 
 	bool connectedTo(const LightNode& other) const;
 
-	
 private:
 	bool m_lit = false;
 	std::array<bool, 6> m_arms = {false};
@@ -30,5 +29,4 @@ private:
 	LightNodeShape m_shape;
 
 	sf::Vector2i m_pos;
-	
 };
