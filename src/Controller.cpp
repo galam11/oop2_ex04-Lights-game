@@ -70,6 +70,7 @@ void Controller::loadMidRowPlayList()
 				throw std::runtime_error("Invalid data found in playlist: expected integers.");
 		}
 	}
+	playListFile.close();
 }
 
 void Controller::loadAndCreateText()

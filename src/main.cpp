@@ -13,6 +13,7 @@ catch (const std::exception& e)
 {
 	std::ofstream ferr (ERR_FILE_PATH);
 	ferr << e.what();
+	ferr.close();
 	return 1;
 }
 catch (...)
